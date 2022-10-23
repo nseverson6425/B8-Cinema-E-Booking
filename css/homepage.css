@@ -1,0 +1,31 @@
+#poster {
+    width: 200;
+    height: 400;
+}
+
+#bg { 
+    /* The image used */
+    background-image: url("../assets/wallpaper.jpg");
+  
+    /* Full height */
+    height: 100%; 
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  iframe {
+    margin: auto;
+    display: block;
+  }
+
+  #trailer_admin {
+    width: 840px;
+    height: 472.5px;
+    padding: 50px;
+    background: white;
+    text-align: center;
+    margin: auto;
+    display: block;
+  }

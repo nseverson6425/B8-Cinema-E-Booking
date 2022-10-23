@@ -1,0 +1,9 @@
+1. Need a home page to differentiate users being logged in vs not logged in
+
+2. Need Logout button (.php) on the hotbar
+
+3. Find out what the rest of the users Database items are
+
+4. change any references to home.html to home.php
+
+5. change references from login.html to login.php

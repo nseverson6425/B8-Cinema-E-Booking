@@ -1,0 +1,19 @@
+.centerText {
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+}
+
+.container {
+  max-width: 960px;
+}
+
+.form-block {
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: auto;
+	margin-bottom: auto;
+	height: auto;
+	width: auto;
+	background-color: #ffffff;
+}
