@@ -2,8 +2,13 @@
 
 2. Need Logout button (.php) on the hotbar
 
-3. Find out what the rest of the users Database items are
+3. add promo check box in signup
 
 4. change any references to home.html to home.php
 
 5. change references from login.html to login.php
+
+6. confirmation email?
+
+7. make turquise box on sign up page 50 px longer height
+
