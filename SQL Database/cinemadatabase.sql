@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 23, 2022 at 09:36 PM
+-- Generation Time: Oct 23, 2022 at 10:53 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -218,34 +218,6 @@ CREATE TABLE `ticket_type` (
   `price` decimal(4,2) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='stores the different types of tickets\n';
 
--- --------------------------------------------------------
-
---
--- Table structure for table `users`
---
-
-CREATE TABLE `users` (
-  `idUser` int(10) UNSIGNED NOT NULL,
-  `firstName` varchar(45) NOT NULL,
-  `lastName` varchar(45) NOT NULL,
-  `phone` varchar(45) NOT NULL,
-  `email` varchar(45) NOT NULL,
-  `password` varchar(45) NOT NULL,
-  `recievePromo` tinyint(4) NOT NULL,
-  `city` varchar(45) DEFAULT NULL,
-  `state` varchar(45) DEFAULT NULL,
-  `zipcode` varchar(45) DEFAULT NULL,
-  `accountStatus` int(11) DEFAULT NULL,
-  `accountType` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Table to store all the users of the system\n';
-
---
--- Dumping data for table `users`
---
-
-INSERT INTO `users` (`idUser`, `firstName`, `lastName`, `phone`, `email`, `password`, `recievePromo`, `city`, `state`, `zipcode`, `accountStatus`, `accountType`) VALUES
-(10, 'Ben', 'Prestel', '7703304466', 'benjamin43.prestel@gmail.com', 'password', 1, 'Marietta', 'Ga', '30062', 1, 1);
-
 --
 -- Indexes for dumped tables
 --
@@ -350,16 +322,6 @@ ALTER TABLE `ticket_type`
   ADD PRIMARY KEY (`idType`);
 
 --
--- Indexes for table `users`
---
-ALTER TABLE `users`
-  ADD PRIMARY KEY (`idUser`),
-  ADD UNIQUE KEY `idUsers_UNIQUE` (`idUser`),
-  ADD UNIQUE KEY `email_UNIQUE` (`email`),
-  ADD KEY `accountType_idx` (`accountType`),
-  ADD KEY `accountStatus_idx` (`accountStatus`);
-
---
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -442,12 +404,6 @@ ALTER TABLE `ticket_type`
   MODIFY `idType` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `users`
---
-ALTER TABLE `users`
-  MODIFY `idUser` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
-
---
 -- Constraints for dumped tables
 --
 
@@ -500,13 +456,6 @@ ALTER TABLE `tickets_table`
   ADD CONSTRAINT `bookingID` FOREIGN KEY (`bookingID`) REFERENCES `booking_table` (`idBooking`),
   ADD CONSTRAINT `seatNumber` FOREIGN KEY (`seatNumber`) REFERENCES `seats_table` (`seatNumber`),
   ADD CONSTRAINT `typeID` FOREIGN KEY (`typeID`) REFERENCES `ticket_type` (`idType`);
-
---
--- Constraints for table `users`
---
-ALTER TABLE `users`
-  ADD CONSTRAINT `accountStatus` FOREIGN KEY (`accountStatus`) REFERENCES `account_status` (`idStatus`),
-  ADD CONSTRAINT `accountType` FOREIGN KEY (`accountType`) REFERENCES `account_type` (`idType`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
